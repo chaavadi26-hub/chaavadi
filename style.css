@@ -59,7 +59,10 @@ nav{
 }
 
 .dropbtn:hover{
-    background:#d60000;
+    background:#8a8a8a00;
+    
+    
+    transform: scale(1.1);
 }
 
 /* Dropdown Menu */
