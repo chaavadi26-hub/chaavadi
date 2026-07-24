@@ -80,3 +80,72 @@ footer{
 body{
     font-family: "Tiro Devanagari Marathi", serif;
 }
+/* Navigation Bar */
+
+nav{
+    background:#222;
+    height:60px;
+    display:flex;
+    align-items:center;
+    padding-left:20px;
+}
+
+/* Dropdown Container */
+
+.dropdown{
+    position:relative;
+}
+
+/* Dropdown Button */
+
+.dropbtn{
+    background:#8B0000;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.dropbtn:hover{
+    background:#a40000;
+}
+
+/* Dropdown Menu */
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:52px;
+    left:0;
+    background:white;
+    min-width:240px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    border-radius:5px;
+    overflow:hidden;
+    z-index:1000;
+}
+
+/* Dropdown Links */
+
+.dropdown-content a{
+    display:block;
+    padding:14px 18px;
+    color:#333;
+    text-decoration:none;
+    font-size:17px;
+    border-bottom:1px solid #ddd;
+}
+
+.dropdown-content a:hover{
+    background:#8B0000;
+    color:white;
+}
+
+/* Show Menu on Hover */
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
