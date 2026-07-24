@@ -26,7 +26,7 @@ body{
 nav{
     width:100%;
     height:45px;
-    background:#001871;
+    background:#030d30;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -140,9 +140,9 @@ nav{
 
 .tagline{
     text-align: center;      /* Center horizontally */
-    font-size: 50px;         /* Large font */
-    font-weight: bold;       /* Bold text */
-    color: #8B0000;          /* Dark red */
+    font-size: 65px;         /* Large font */
+    font-weight: bolder;       /* Bold text */
+    color: #ff3c00;          /* Dark red */
     margin-top: 60px;       /* Space from top */
     font-family: "Tiro Devanagari Marathi", serif;
 }
