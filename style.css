@@ -40,13 +40,7 @@ nav{
 
 .dropdown{
     position:relative;
-<<<<<<< Updated upstream
-
-
-=======
-    
-    
->>>>>>> Stashed changes
+    transition:1s;
 }
 
 /* Button */
