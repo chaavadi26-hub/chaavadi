@@ -13,6 +13,12 @@ body{
     background:#f4f4f4;
 }
 
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
 /* ===========================
    Navigation Bar
 =========================== */
@@ -34,6 +40,8 @@ nav{
 
 .dropdown{
     position:relative;
+    
+    
 }
 
 .dropbtn{
