@@ -97,6 +97,14 @@ nav{
 /* ===========================
    Date (Extreme Right)
 =========================== */
+.coming-soon{
+    text-align: center;      /* Center horizontally */
+    font-size: 48px;         /* Large font */
+    font-weight: bold;       /* Bold text */
+    color: #8B0000;          /* Dark red */
+    margin-top: 120px;       /* Space from top */
+    font-family: "Tiro Devanagari Marathi", serif;
+}
 
 .date{
     margin-left:auto;
