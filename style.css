@@ -132,7 +132,7 @@ nav {
 .coming-soon {
     text-align: center;
     /* Center horizontally */
-    font-size: 45px;
+    font-size: 38px;
     /* Large font */
     font-weight: bold;
     /* Bold text */
@@ -148,7 +148,7 @@ nav {
     /* Center horizontally */
     font-size: 65px;
     /* Large font */
-    font-weight: bolder;
+    font-weight: bolder ;
     /* Bold text */
     color: #ff3c00;
     /* Dark red */
