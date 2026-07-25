@@ -138,6 +138,15 @@ nav{
     font-family: "Tiro Devanagari Marathi", serif;
 }
 
+.tagline{
+    text-align: center;      /* Center horizontally */
+    font-size: 65px;         /* Large font */
+    font-weight: bolder;       /* Bold text */
+    color: #ff3c00;          /* Dark red */
+    margin-top: 60px;       /* Space from top */
+    font-family: "Tiro Devanagari Marathi", serif;
+}
+
 .date{
     margin-left:auto;
     color:#ffffff;
