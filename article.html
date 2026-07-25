@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>चावडी न्यूज</title>
+    <title>बातमी — चावडी न्यूज</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 <header>
-
-    <h1 class="logo"><img src="img/chaavadi_logo.png" alt="चावडी न्यूज"  width="250"></h1>
-
-
+    <h1 class="logo"><a href="index.html"><img src="img/chaavadi_logo.png" alt="चावडी न्यूज" width="250"></a></h1>
 </header>
 
-
-    <nav>
-
+<nav>
     <div class="dropdown">
         <button class="dropbtn">☰ विभाग</button>
-
         <div class="dropdown-content">
             <a href="index.html">📰 ताज्या बातम्या</a>
             <a href="category.html?cat=krida">🏏 क्रीडा</a>
@@ -31,45 +24,26 @@
             <a href="category.html?cat=aantararashtriya">🌍 आंतरराष्ट्रीय</a>
         </div>
     </div>
-
-   <div class="date" id="currentDate"></div>
-
+    <div class="date" id="currentDate"></div>
 </nav>
 
-
-<section class="news-section">
-  <h2 class="section-title">ताज्या बातम्या</h2>
-  <div class="news-grid" id="newsGrid">
-    <p class="no-news">बातम्या लोड होत आहेत...</p>
-  </div>
-</section>
-
-
+<main class="article-container" id="articleContainer">
+  <p class="no-news">बातमी लोड होत आहे...</p>
+</main>
 
 <footer>
-
     © 2026 Chaavadi. All Rights Reserved.<br>
     Website designed & developed by VILLTECH VISION
-
-
 </footer>
-   <script>
+
+<script>
     const today = new Date();
-
-    const options = {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    };
-
     document.getElementById("currentDate").innerHTML =
-          today.toLocaleDateString('mr-IN', options);
+        today.toLocaleDateString('mr-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 </script>
 <script src="js/app.js"></script>
 <script>
-  renderNewsGrid("newsGrid");
+  renderArticle("articleContainer");
 </script>
-
 </body>
 </html>

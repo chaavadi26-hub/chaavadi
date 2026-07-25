@@ -1,0 +1,61 @@
+# ============================================================
+# चावडी — Decap CMS configuration
+# This file controls (1) how the admin logs in, and
+# (2) what fields the "publish news" form shows.
+# Only people who authorize through GitHub login (step 3 in
+# README.md) can reach this form or save anything — nobody else
+# can post news to the site.
+# ============================================================
+
+backend:
+  name: github
+  repo: chaavadi26-hub/chaavadi     # your actual GitHub repo
+  branch: main
+  base_url: https://api.netlify.com  # Netlify is used ONLY as a free OAuth broker —
+  auth_endpoint: auth                 # the site itself keeps running on GitHub Pages.
+
+# Where images uploaded through the admin form get stored, and how
+# they're linked from the site.
+media_folder: "img/uploads"
+public_folder: "img/uploads"
+
+# All news lives in ONE json file — no build step required, the
+# homepage just fetches this file directly in the browser.
+collections:
+  - name: "news"
+    label: "बातम्या"
+    files:
+      - file: "content/news.json"
+        label: "सर्व बातम्या"
+        name: "news"
+        fields:
+          - name: "items"
+            label: "बातम्यांची यादी"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "ओळख क्रमांक (लिंकसाठी — फक्त इंग्रजी लहान अक्षरे/आकडे/डॅश, स्पेस नको)"
+                name: "id"
+                widget: "string"
+                pattern: ["^[a-z0-9-]+$", "फक्त लहान इंग्रजी अक्षरे, आकडे व - वापरा (उदा: monsoon-update)"]
+                hint: "उदा: taluka-kabaddi-final"
+              - { label: "मथळा (Title)", name: "title", widget: "string" }
+              - label: "विभाग (Category)"
+                name: "category"
+                widget: "select"
+                options:
+                  - { label: "क्रीडा", value: "krida" }
+                  - { label: "राजकारण", value: "rajkaran" }
+                  - { label: "अर्थव्यवस्था", value: "arthavyavastha" }
+                  - { label: "स्थानिक", value: "sthanik" }
+                  - { label: "आरोग्य", value: "arogya" }
+                  - { label: "आंतरराष्ट्रीय", value: "aantararashtriya" }
+              - { label: "थोडक्यात (Excerpt)", name: "excerpt", widget: "text" }
+              - { label: "मुख्य फोटो (Image)", name: "image", widget: "image", required: false }
+              - { label: "लेखक (Author)", name: "author", widget: "string", default: "प्रतिनिधी, चावडी" }
+              - { label: "प्रकाशन दिनांक (Date)", name: "date", widget: "datetime" }
+              - label: "ट्रेंडिंगमध्ये दाखवा?"
+                name: "trending"
+                widget: "boolean"
+                default: false
+              - { label: "संपूर्ण बातमी (Body)", name: "body", widget: "text" }
