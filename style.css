@@ -11,6 +11,9 @@
 
 body{
     background:#f4f4f4;
+    margin:0;
+    min-height:100vh;
+    padding-bottom:55px; /* Space for fixed footer */
 }
 
 .logo{
@@ -164,11 +167,55 @@ nav{
 =========================== */
 
 footer{
-    bottom:0;
+    position:fixed;
     left:0;
+    bottom:0;
     width:100%;
-    background:#1111117e;
-    color:white;
+
+    background:#a49999;
+    color:#fff;
+
     text-align:center;
-    padding:5px;
+    padding:12px 10px;
+
+    font-size:14px;
+
+    z-index:1000;
+
+    box-shadow:0 -2px 8px rgba(0,0,0,.25);
+}
+@media (max-width:768px){
+
+    .logo img{
+        width:220px;
+        height:auto;
+    }
+
+    .tagline{
+        font-size:36px;
+        margin-top:30px;
+    }
+
+    .coming-soon{
+        font-size:24px;
+        margin-top:25px;
+    }
+
+    .dropbtn{
+        font-size:14px;
+        padding:6px 12px;
+    }
+
+    .date{
+        font-size:11px;
+    }
+
+    footer{
+        font-size:12px;
+        padding:10px 5px;
+    }
+
+    body{
+        padding-bottom:50px;
+    }
 }
