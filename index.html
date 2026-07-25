@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>महाराष्ट्र वार्ता</title>
+    <title>चावडी न्यूज</title>
     <link rel="stylesheet" href="style.css">
     <header>
 
@@ -32,9 +32,7 @@
         </div>
     </div>
 
-    <div class="date">
-        📅 २५ जुलै २०२६
-    </div>
+   <div class="date" id="currentDate"></div>
 
 </nav>
 
@@ -47,7 +45,20 @@
     
 
 </footer>
-   
+   <script>
+    const today = new Date();
+
+    const options = {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    };
+
+    document.getElementById("currentDate").innerHTML =
+        "📅 " + today.toLocaleDateString('mr-IN', options);
+</script>
+
 
 
 </body>
