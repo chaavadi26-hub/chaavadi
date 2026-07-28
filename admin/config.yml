@@ -44,19 +44,24 @@ collections:
                 name: "category"
                 widget: "select"
                 options:
-                  - { label: "स्थानिक", value: "sthanik" }
-                  - { label: "राजकारण", value: "rajkaran" }
                   - { label: "क्रीडा", value: "krida" }
-                  - { label: "कला आणि संस्कृती", value: "kalaaanisanskruti" }
-                  - { label: "आरोग्य", value: "arogya" }
+                  - { label: "राजकारण", value: "rajkaran" }
                   - { label: "अर्थव्यवस्था", value: "arthavyavastha" }
+                  - { label: "स्थानिक", value: "sthanik" }
+                  - { label: "आरोग्य", value: "arogya" }
                   - { label: "आंतरराष्ट्रीय", value: "aantararashtriya" }
               - { label: "थोडक्यात (Excerpt)", name: "excerpt", widget: "text" }
               - { label: "मुख्य फोटो (Image)", name: "image", widget: "image", required: false }
+              - { label: "अतिरिक्त फोटो १ (Extra Image 1)", name: "image2", widget: "image", required: false }
+              - { label: "अतिरिक्त फोटो २ (Extra Image 2)", name: "image3", widget: "image", required: false }
+              - { label: "अतिरिक्त फोटो ३ (Extra Image 3)", name: "image4", widget: "image", required: false }
               - { label: "लेखक (Author)", name: "author", widget: "string", default: "प्रतिनिधी, चावडी" }
               - { label: "प्रकाशन दिनांक (Date)", name: "date", widget: "datetime" }
               - label: "ट्रेंडिंगमध्ये दाखवा?"
                 name: "trending"
                 widget: "boolean"
                 default: false
-              - { label: "संपूर्ण बातमी (Body)", name: "body", widget: "text" }
+              - { label: "संपूर्ण बातमी - भाग १ (Body - Part 1)", name: "body", widget: "text" }
+              - { label: "संपूर्ण बातमी - भाग २ (Body - Part 2)", name: "body2", widget: "text", required: false }
+              - { label: "उपशीर्षक (Subtitle)", name: "subtitle", widget: "string", required: false }
+              - { label: "संपूर्ण बातमी - भाग ३ (Body - Part 3)", name: "body3", widget: "text", required: false }
