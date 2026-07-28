@@ -118,25 +118,25 @@ async function renderArticle(targetId) {
     const extraImages = [item.image2, item.image3, item.image4].filter(Boolean);
     const extraImagesHtml = extraImages.length
       ? `<div class="article-extra-images">${extraImages
-          .map((src) => `<img src="${src}" alt="${item.title}" loading="lazy">`)
-          .join("")}</div>`
+        .map((src) => `<img src="${src}" alt="${item.title}" loading="lazy">`)
+        .join("")}</div>`
       : "";
 
     container.innerHTML = `
-      <span class="news-category">${categoryLabel(item.category)}</span>
-      <h1>${item.title}</h1>
-      ${subtitleHtml}
-      <div class="article-meta">
-        <span>${item.author || ""}</span>
-        <span>•</span>
-        <span>${formatDate(item.date)}</span>
-      </div>
-      ${img}
-      <div class="article-body">${bodyHtml}</div>
-      ${body2Html}
-      ${extraImagesHtml}
-      <a class="back-link" href="index.html">← मुख्यपृष्ठावर परत जा</a>
-    `;
+  <span class="news-category">${categoryLabel(item.category)}</span>
+  <h1>${item.title}</h1>
+  <div class="article-meta">
+    <span>${item.author || ""}</span>
+    <span>•</span>
+    <span>${formatDate(item.date)}</span>
+  </div>
+  ${img}
+  <div class="article-body">${bodyHtml}</div>
+  ${subtitleHtml}
+  ${body2Html}
+  ${extraImagesHtml}
+  <a class="back-link" href="index.html">← मुख्यपृष्ठावर परत जा</a>
+`;
   } catch (e) {
     container.innerHTML = `<p class="no-news">बातमी लोड करताना अडचण आली.</p>`;
     console.error(e);
