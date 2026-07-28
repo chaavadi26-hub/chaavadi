@@ -369,15 +369,14 @@ footer {
 .article-subtitle {
     font-size: 17px;
     font-weight: 700;
-    color: #030d30;
-    margin: -4px 0 16px;
+    color: #07174f;
     line-height: 1.5;
 }
 
 /* ---- Body Part 2: distinct color, separated with a divider ---- */
 .article-body-2 {
-    margin-top: 10px;
-    padding-top: 16px;
+    margin-top: px;
+    padding-top: px;
     
 }
 
