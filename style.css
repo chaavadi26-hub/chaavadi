@@ -114,7 +114,7 @@ nav {
 
     padding: 14px 18px;
 
-    color: #333;
+    color: #ffffff;
 
     text-decoration: none;
 
@@ -123,6 +123,8 @@ nav {
     transition: .3s;
 
     border-bottom: 1px solid #ececec;
+
+    background-color: rgb(7, 6, 83);
 }
 
 .dropdown-content:last-child {
@@ -139,7 +141,7 @@ nav {
 }
 
 .extra:hover {
-    background: #b30000;
+    background: #2200ff;
     color: white;
 }
 /* Show Dropdown */
