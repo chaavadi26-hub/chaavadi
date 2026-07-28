@@ -6,12 +6,13 @@
 // ============================================================
 
 const CATEGORY_LABELS = {
-  krida: "🏏 क्रीडा",
-  rajkaran: "🏛 राजकारण",
-  arthavyavastha: "💹 अर्थव्यवस्था",
-  sthanik: "📍 स्थानिक",
-  arogya: "🧑‍⚕️ आरोग्य",
-  aantararashtriya: "🌍 आंतरराष्ट्रीय"
+  
+  krida: "क्रीडा",
+  rajkaran: "राजकारण",
+  arthavyavastha: "अर्थव्यवस्था",
+  sthanik: "स्थानिक",
+  arogya: "आरोग्य",
+  aantararashtriya: "आंतरराष्ट्रीय"
 };
 
 function categoryLabel(cat) {
