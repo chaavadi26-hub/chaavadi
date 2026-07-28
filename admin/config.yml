@@ -62,6 +62,5 @@ collections:
                 widget: "boolean"
                 default: false
               - { label: "संपूर्ण बातमी - भाग १ (Body - Part 1)", name: "body", widget: "text" }
-              - { label: "संपूर्ण बातमी - भाग २ (Body - Part 2)", name: "body2", widget: "text", required: false }
               - { label: "उपशीर्षक (Subtitle)", name: "subtitle", widget: "string", required: false }
-              - { label: "संपूर्ण बातमी - भाग ३ (Body - Part 3)", name: "body3", widget: "text", required: false }
+              - { label: "संपूर्ण बातमी - भाग २ (Body - Part 2)", name: "body2", widget: "text", required: false }
