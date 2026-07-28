@@ -48,7 +48,7 @@ collections:
                   - { label: "स्थानिक", value: "sthanik" }
                   - { label: "राजकारण", value: "rajkaran" }
                   - { label: "क्रीडा", value: "krida" }
-                  - { label: "कला आणि संस्कृती", value: "Kala ani Sanskruti" }
+                  - { label: "कला आणि संस्कृती", value: "kalaaanisanskruti" }
                   - { label: "आरोग्य", value: "arogya" }
                   - { label: "अर्थव्यवस्था", value: "arthavyavastha" }
                   - { label: "आंतरराष्ट्रीय", value: "aantararashtriya" }
