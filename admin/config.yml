@@ -53,7 +53,6 @@ collections:
                   - { label: "आंतरराष्ट्रीय", value: "aantararashtriya" }
               - { label: "थोडक्यात (Excerpt)", name: "excerpt", widget: "text" }
               - { label: "मुख्य फोटो (Image)", name: "image", widget: "image", required: false }
-              - { label: "मुख्य फोटो (Image1)", name: "image1", widget: "image1", required: false }
               - { label: "लेखक (Author)", name: "author", widget: "string", default: "प्रतिनिधी, चावडी" }
               - { label: "प्रकाशन दिनांक (Date)", name: "date", widget: "datetime" }
               - label: "ट्रेंडिंगमध्ये दाखवा?"
