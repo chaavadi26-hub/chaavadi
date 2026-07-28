@@ -375,8 +375,7 @@ footer {
 
 /* ---- Body Part 2: distinct color, separated with a divider ---- */
 .article-body-2 {
-    margin-top: px;
-    padding-top: px;
+    padding-top: 3px;
     
 }
 
@@ -390,17 +389,17 @@ footer {
 /* ---- Extra images (image2/3/4) ---- */
 .article-extra-images {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 10px;
     margin: 20px 0;
 }
 
 .article-extra-images img {
     width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 6px;
-    box-shadow: 0 0 8px #2222223d;
+    max-height: 420px;
+    object-fit: contain;
+    box-shadow: 0 0 10px #2222223d;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 
