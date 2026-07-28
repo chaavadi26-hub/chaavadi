@@ -43,7 +43,7 @@ async function fetchNews() {
 
 function newsCardHTML(item) {
   const img = item.image
-    ? `<img src="${item.image}" alt="${item.title}" loading="lazy">`
+    ? `<img src="${item.image}" alt="${item.title}" loading="eager">`
     : "";
   return `
     <a class="news-card" href="article.html?id=${encodeURIComponent(item.id)}">
@@ -84,6 +84,36 @@ function textToParagraphs(text) {
     .map((p) => `<p>${p.replace(/\n/g, "<br>")}</p>`)
     .join("");
 }
+
+function ensureLightbox() {
+  if (document.getElementById("imgLightbox")) return;
+  const overlay = document.createElement("div");
+  overlay.id = "imgLightbox";
+  overlay.className = "lightbox-overlay";
+  overlay.innerHTML = `
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  `;
+  overlay.addEventListener("click", (e) => {
+    if (e.target.id === "imgLightbox") closeLightbox();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+  document.body.appendChild(overlay);
+}
+
+function openLightbox(src) {
+  ensureLightbox();
+  document.getElementById("lightboxImg").src = src;
+  document.getElementById("imgLightbox").classList.add("active");
+}
+
+function closeLightbox() {
+  const overlay = document.getElementById("imgLightbox");
+  if (overlay) overlay.classList.remove("active");
+}
+
 
 async function renderArticle(targetId) {
   const container = document.getElementById(targetId);

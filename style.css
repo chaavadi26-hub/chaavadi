@@ -378,7 +378,7 @@ footer {
 .article-body-2 {
     margin-top: 10px;
     padding-top: 16px;
-    border-top: 1px dashed #ddd;
+    
 }
 
 .article-body-2 p {
@@ -403,6 +403,8 @@ footer {
     border-radius: 6px;
     box-shadow: 0 0 8px #2222223d;
 }
+
+
 
 .back-link {
     display: inline-block;
