@@ -77,6 +77,14 @@ async function renderNewsGrid(targetId, filterCategory) {
   }
 }
 
+function textToParagraphs(text) {
+  return (text || "")
+    .split(/\n\s*\n/)
+    .filter((p) => p.trim())
+    .map((p) => `<p>${p.replace(/\n/g, "<br>")}</p>`)
+    .join("");
+}
+
 async function renderArticle(targetId) {
   const container = document.getElementById(targetId);
   if (!container) return;
@@ -90,16 +98,34 @@ async function renderArticle(targetId) {
       return;
     }
     document.title = item.title + " — चावडी न्यूज";
+
     const img = item.image
       ? `<img class="article-image" src="${item.image}" alt="${item.title}">`
       : "";
-    const bodyHtml = (item.body || "")
-      .split(/\n\s*\n/)
-      .map((p) => `<p>${p.replace(/\n/g, "<br>")}</p>`)
-      .join("");
+
+    // Subtitle — bold, shown right under the title
+    const subtitleHtml = item.subtitle
+      ? `<p class="article-subtitle">${item.subtitle}</p>`
+      : "";
+
+    // Body Part 1 (normal color) and Body Part 2 (distinct color, separated)
+    const bodyHtml = textToParagraphs(item.body);
+    const body2Html = item.body2
+      ? `<div class="article-body-2">${textToParagraphs(item.body2)}</div>`
+      : "";
+
+    // Extra images (image2, image3, image4)
+    const extraImages = [item.image2, item.image3, item.image4].filter(Boolean);
+    const extraImagesHtml = extraImages.length
+      ? `<div class="article-extra-images">${extraImages
+          .map((src) => `<img src="${src}" alt="${item.title}" loading="lazy">`)
+          .join("")}</div>`
+      : "";
+
     container.innerHTML = `
       <span class="news-category">${categoryLabel(item.category)}</span>
       <h1>${item.title}</h1>
+      ${subtitleHtml}
       <div class="article-meta">
         <span>${item.author || ""}</span>
         <span>•</span>
@@ -107,6 +133,8 @@ async function renderArticle(targetId) {
       </div>
       ${img}
       <div class="article-body">${bodyHtml}</div>
+      ${body2Html}
+      ${extraImagesHtml}
       <a class="back-link" href="index.html">← मुख्यपृष्ठावर परत जा</a>
     `;
   } catch (e) {
