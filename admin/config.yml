@@ -44,6 +44,7 @@ collections:
                 name: "category"
                 widget: "select"
                 options:
+                  - { lable: "संपादकीय", value: "sampadkiya"}
                   - { label: "स्थानिक", value: "sthanik" }
                   - { label: "राजकारण", value: "rajkaran" }
                   - { label: "क्रीडा", value: "krida" }

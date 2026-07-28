@@ -6,7 +6,8 @@
 // ============================================================
 
 const CATEGORY_LABELS = {
-  sampdakiya: "सम्पादकीय",
+  sampadkiya: "संपादकीय",
+  kalaaanisanskruti: "कला आणि संस्कृती",
   krida: "क्रीडा",
   rajkaran: "राजकारण",
   arthavyavastha: "अर्थव्यवस्था",
