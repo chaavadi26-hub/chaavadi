@@ -77,6 +77,52 @@ async function renderNewsGrid(targetId, filterCategory) {
   }
 }
 
+function updateMetaTags(item) {
+  if (!item) return;
+  const baseUrl = "https://chaavadi.in";
+  const articleUrl = `${baseUrl}/article.html?id=${encodeURIComponent(item.id)}`;
+  const imageUrl = item.image ? `${baseUrl}/${item.image}` : `${baseUrl}/img/chaavadi_logo.png`;
+  const title = item.title + " — चावडी न्यूज";
+  const description = item.excerpt || "चावडी न्यूज - महाराष्ट्रातील ताज्या बातम्या, ब्रेकिंग न्यूज आणि महत्वाच्या घडामोडी.";
+
+  document.title = title;
+
+  const metaTags = [
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:image", content: imageUrl },
+    { property: "og:url", content: articleUrl },
+    { property: "og:type", content: "article" },
+    { property: "og:site_name", content: "चावडी न्यूज" },
+
+  ];
+
+  metaTags.forEach(({ name, property, content }) => {
+    let selector = name ? `meta[name="${name}"]` : `meta[property="${property}"]`;
+    let meta = document.querySelector(selector);
+    if (meta) {
+      meta.setAttribute("content", content);
+    } else {
+      meta = document.createElement("meta");
+      if (name) meta.setAttribute("name", name);
+      if (property) meta.setAttribute("property", property);
+      meta.setAttribute("content", content);
+      document.head.appendChild(meta);
+    }
+  });
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) {
+    canonical.setAttribute("href", articleUrl);
+  } else {
+    const link = document.createElement("link");
+    link.setAttribute("rel", "canonical");
+    link.setAttribute("href", articleUrl);
+    document.head.appendChild(link);
+  }
+}
+
 function textToParagraphs(text) {
   return (text || "")
     .split(/\n\s*\n/)
@@ -127,7 +173,7 @@ async function renderArticle(targetId) {
       container.innerHTML = `<p class="no-news">बातमी सापडली नाही.</p>`;
       return;
     }
-    document.title = item.title + " — चावडी न्यूज";
+    updateMetaTags(item);
 
     const img = item.image
       ? `<img class="article-image" src="${item.image}" alt="${item.title}">`
